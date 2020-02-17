@@ -1,4 +1,8 @@
-This is my knowledge glossar.
+This is my knowledge glossar about topics on Machine Learning and Data Science. I use it for myself to recapture different topics, dicscriptions, solutions and technologies. 
+
+#### Table of contents
+1. [Machine Learning](#machine-learning)
+2. [Data Science](#data-science)
 
 # Machine Learning
 
