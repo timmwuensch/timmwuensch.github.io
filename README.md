@@ -11,7 +11,7 @@ Infact Machnine Learning is a collection of various statistical and mathemetical
 
 Here we differ between three types of Machine Learning problems, based on their learning method (suppervised or unsupervised) and the intention of the Machine Learning system.
 
-IMAGE
+![Overview of Machine Learning Categories](https://github.com/timmwuensch/timmwuensch.github.io/blob/master/images/ml_overview.JPG "Machine Learning Overview")
 
 **Classification** is a type of problem where the system predicts **discrete outputs**, like a certain number of classes. Based on its Supervised Learning strategy, the input data has to be pre-labeled.
 
@@ -26,11 +26,11 @@ The tree consists of different nodes, branches and leafs. To define the nodes, e
 
 In this example we want to create a Decision Tree from a small dataset. It should classify datapoints that consists of gender, weight and age into its status of obesity. 
 
-IMAGE (Table +  Impurity calculation for male)
+![Decision Tree Impurity Calculation](https://github.com/timmwuensch/timmwuensch.github.io/blob/master/images/decision_tree_impurity.JPG "Decision Tree Impurity Calculation")
 
 The dataset has three feature and one label column. To build a Decision Tree, we have to find a feature with the lowest Gini Impurity for our data record. The first feature (*male*) is of Boolean Type and easy to handle. You just have to answer the question: How much is obesity dependent from gender? In the figure above, you can see a simple Gini Impurity calculation.
 
-IMAGE (ordered Table + Impurity calculation for weight)
+![Impurity Calculation for numeric values](https://github.com/timmwuensch/timmwuensch.github.io/blob/master/images/decision_tree_impurity_weight.JPG "Decision Tree Impurity Calculation for numeric values")
 
 To calculate the Gini Impurity of a non boolean feature like *weight* we have to do a couple of more steps. Firstly, sort the patients by ascending weight. Secondly, calculate the average weight for every adjacent patients. Finally, calculate the Gini Impurity for every average weight and take the lowest to define the Gini Impurity of the feature.
 
