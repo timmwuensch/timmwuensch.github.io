@@ -13,11 +13,11 @@ Here we differ between three types of Machine Learning problems, based on their 
 
 IMAGE
 
-Classification is a type of problem where the system predicts **discrete outputs**, like a certain number of classes. Based on its Supervised Learning strategy, the input data has to be pre-labeled.
+**Classification** is a type of problem where the system predicts **discrete outputs**, like a certain number of classes. Based on its Supervised Learning strategy, the input data has to be pre-labeled.
 
-Regression is a type of problem where the system predicts **continuous outputs**, like a certain value of interest. The input data has to be labeles as well, that means it requires a record of data including the value. A common example is the prediction of temperature on the basis of collected weather data.
+**Regression** is a type of problem where the system predicts **continuous outputs**, like a certain value of interest. The input data has to be labeles as well, that means it requires a record of data including the value. A common example is the prediction of temperature on the basis of collected weather data.
 
-Clustering is a type of problem where the system finds **unknown patterns and groups** in a dataset. It is a kind of explorative data analysis. A common example is categorization of fitting sizes into groups like small, medium, large or extra large. 
+**Clustering** is a type of problem where the system finds **unknown patterns and groups** in a dataset. It is a kind of explorative data analysis. A common example is categorization of fitting sizes into groups like small, medium, large or extra large. 
 
 ## Decision Tree
 ## Random Forest
@@ -32,3 +32,20 @@ Clustering is a type of problem where the system finds **unknown patterns and gr
 
 
 # Data Science
+The challenge behind Data Science is to turn data into information. These information could be used to support business processes with advanced analytics, predictions and decisions. The tasks of a Data Scientist pyrtly overlaps with Machine Learning, but there are still differences between both field of research. 
+
+The work of a Data Scientist could be divided into three segments. 
+
+IMAGE
+
+The first segment refers to the variety of **Data Sources and Technologies**. Here you have to identify valid data sources (databases or datastreams) and convert data into a usable structure for further analytics (Data Ware House). In this context Data Scientists make use of ETL-Pipelines (Extract-Transform-Load) to transform and convert data.
+
+The second segment refers to so-called **Data Framework**s (e.g. Pandas or Apache Spark). These frameworks or libraries provide data structures and methods to handle the data. The selection of an adequate Data Framework is often based on the amount, size and type of data. 
+
+The third segment refers to variety of **analytical, statistical and mathemetical methods** which are used by Data Scientists. These methods can range from statistical basics, over regression models to Machine Learning Models. 
+
+
+
+
+
+
