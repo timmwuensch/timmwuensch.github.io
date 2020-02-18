@@ -11,7 +11,7 @@ Infact Machnine Learning is a collection of various statistical and mathemetical
 
 Here we differ between three types of Machine Learning problems, based on their learning method (suppervised or unsupervised) and the intention of the Machine Learning system.
 
-![Overview of Machine Learning Categories](https://github.com/timmwuensch/timmwuensch.github.io/blob/master/images/ml_overview.JPG "Machine Learning Overview")
+![Overview of Machine Learning Categories](images/ml_overview.JPG "Machine Learning Overview")
 
 **Classification** is a type of problem where the system predicts **discrete outputs**, like a certain number of classes. Based on its Supervised Learning strategy, the input data has to be pre-labeled.
 
