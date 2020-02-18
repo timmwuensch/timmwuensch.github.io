@@ -37,6 +37,10 @@ To calculate the Gini Impurity of a non boolean feature like *weight* we have to
 When it comes to ranked or classified data, you have to calculate the Gini Impurity for each combination of classes or rank intervals. 
 
 ## Random Forest
+A Random Forest is an ensemble of numerous Decision Trees which are randomly build. They are generated from different subsets of the original data which is also called Bootstraped Data. Instead of the entire dataset, these subsets consist of randomly selected features and data rows. The diffenrent subsets lead to *n* different Decision Trees which are combined in ensemble structure of the Random Forest. 
+
+When inserting new data into the Random Forest, it runs the data through every single Decision Tree and takes the **major decision** as output. 
+
 ## Support Vector Machines
 ## k-Nearest Neighbor
 ## k-Means Clustering
@@ -48,7 +52,7 @@ When it comes to ranked or classified data, you have to calculate the Gini Impur
 
 
 # Data Science
-The challenge behind Data Science is to turn data into information. These information could be used to support business processes with advanced analytics, predictions and decisions. The tasks of a Data Scientist pyrtly overlaps with Machine Learning, but there are still differences between both field of research. 
+The challenge behind Data Science is to turn data into information. These information could be used to support business processes with advanced analytics, predictions and decisions. The tasks of a Data Scientist partly overlaps with Machine Learning, but there are still differences between both field of research. 
 
 The work of a Data Scientist could be divided into three segments. 
 
@@ -58,7 +62,7 @@ The first segment refers to the variety of **Data Sources and Technologies**. He
 
 The second segment refers to so-called **Data Frameworks** (e.g. Pandas or Apache Spark). These frameworks or libraries provide data structures and methods to handle the data. The selection of an adequate Data Framework is often based on the amount, size and type of data. 
 
-The third segment refers to variety of **analytical, statistical and mathemetical methods** which are used by Data Scientists. These methods can range from statistical basics, over regression models to Machine Learning Models. 
+The third segment refers to variety of **analytical, statistical and mathematical methods** which are used by Data Scientists. These methods can range from statistical basics, over regression models to Machine Learning Models. 
 
 
 
