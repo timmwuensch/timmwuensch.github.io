@@ -52,7 +52,7 @@ The challenge behind Data Science is to turn data into information. These inform
 
 The work of a Data Scientist could be divided into three segments. 
 
-IMAGE
+![Data Science Overview](images/data_science.JPG "Data Science Overview")
 
 The first segment refers to the variety of **Data Sources and Technologies**. Here you have to identify valid data sources (databases or datastreams) and convert data into a usable structure for further analytics (Data Ware House). In this context Data Scientists make use of ETL-Pipelines (Extract-Transform-Load) to transform and convert data.
 
