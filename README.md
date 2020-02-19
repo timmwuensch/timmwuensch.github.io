@@ -109,6 +109,80 @@ movies['score'] = movies.apply(weighted_rating, axis=1)
 movies = movies.sort_values('score', ascending=False)
 ```
 
+### Knowledge Filetering
+This type of Recommender uses explicit information given by the user on his favorites. Based on this input you can simply filter the dataset and recommend the movies with the best scores. 
+
+```python
+movies = gen_df.copy()
+    movies = movies[(movies[genre] == 1) &
+                   (movies.runtime >= low_time) &
+                   (movies.runtime <= high_time) &
+                   (movies.year >= low_year) &
+                   (movies.year <= high_year)]
+    
+    # Compute the weightes score 
+    C = movies.vote_average.mean()
+    m = movies.vote_count.quantile(percentile)
+    
+    q_movies = movies.copy().loc[movies.vote_count >= m]
+    
+    q_movies['score'] = q_movies.apply(lambda x: (x['vote_count']/(x['vote_count'] + m) * x['vote_average']) + (m/(m + x['vote_count']) * C), axis=1) 
+    
+    # Sort movies
+    q_movies = q_movies.sort_values('score', ascending=False)
+```
+
+### Data-based Recommender
+This type of Recommender uses descriptions, contents or any other type of meta-information and calculates the similarity between the movies. Based on this similarity scores, the system recommends similar movies to the user.
+
+In the following example we use a set of metadata to create a soup of information that can be compared.
+
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+# Create a metadata soup containing all information we want to take into account
+def create_soup(x):
+    return ' '.join(x.keywords) + ' ' + ' '.join(x.cast) + ' ' + x.director + ' ' + ' '.join(x.genres)
+
+data['soup'] = data.apply(create_soup, axis=1)
+data.soup.head(3)
+
+# Create the recommender with CountVectorizer and cosine_similarity
+count = CountVectorizer(stop_words='english')
+count_matrix = count.fit_transform(data.soup)
+
+# Compute cosine similarity scores
+cosine_sim = cosine_similarity(count_matrix, count_matrix)
+
+# Reset index and construct reverse mapping
+data = data.reset_index()
+indices = pd.Series(data.index, index=data.title)
+
+# Function that takes the title of a movie as an input for recommendation
+def content_recommender(title, cosine_sim=cosine_sim, data=data, indices=indices):
+  idx = indices[title]
+
+  # Get the pairwise similarity score of all movies withe that movie
+  # Convert it into a list of tuples (position, similarity score)
+  sim_scores = list(enumerate(cosine_sim[idx]))
+
+  # Sort the list
+  sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+
+  # Reduce it to the first 10 movies; Ignore the first (itself)
+  sim_scores = sim_scores[1:11]
+
+  # Get the indices
+  movie_indices = [i[0] for i in sim_scores]
+
+  # Return the top 10
+  return data.title.iloc[movie_indices]
+
+content_recommender('The Lion King')
+```
+
+### Collaborativ Filtering
 
 
 
