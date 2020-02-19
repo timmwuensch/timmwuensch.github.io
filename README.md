@@ -216,7 +216,27 @@ content_recommender('The Lion King')
 ### Collaborativ Filtering
 
 
+## Dimensionality Reduction
+A lot of data and different features have a bad impact on the performance of the training and the model. This is also known as the curse of dimensionality and a big problem in Machine Learning. There are some techniques to reduce the number of dimensions in the data space. This might increase the overall performance of model.
 
+### Principal Component Analysis (PCA)
+PCA is an unsupervised feature extraction algorithm and describes the dataset in a limited number of Principle Components. The following description is taken from Wikipedia:
+
+Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components. This transformation is defined in such a way that the first principal component has the largest possible variance (that is, accounts for as much of the variability in the data as possible), and each succeeding component in turn has the highest variance possible under the constraint that it is orthogonal to the preceding components. The resulting vectors (each being a linear combination of the variables and containing n observations) are an uncorrelated orthogonal basis set.
+
+To sum it up, it combines our input variables in a specific way, then we can drop the “least important” variables while still retaining the most valuable parts of all of the variables. The first PC includes the most variance of the data.
+
+To clarify the process of PCA, please have a look to this [StatQuest Video on PCA](https://www.youtube.com/watch?v=FgakZw6K1QQ).
+
+```python
+from sklearn.decomposition import PCA
+pca = PCA(n_components)
+pca_data = pca.fit_transform(normalized_X)
+pca_data = pandas.DataFrame(data=pca_data, columns=['PC1', 'PC2']
+
+# Get the ratio of variance for each PC
+ratios = pca.explained_variance_ratio_
+```
 
 
 
