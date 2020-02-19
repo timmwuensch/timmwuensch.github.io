@@ -36,7 +36,7 @@ To calculate the Gini Impurity of a non boolean feature like *weight* we have to
 
 When it comes to ranked or classified data, you have to calculate the Gini Impurity for each combination of classes or rank intervals. 
 
-```
+```python
 from sklearn.tree import DecisionTreeRegressor
 dt = DecisionTreeRegressor(random_state=1)
 dt.fit(train_X, train_y)
@@ -47,7 +47,7 @@ A Random Forest is an ensemble of numerous Decision Trees which are randomly bui
 
 When inserting new data into the Random Forest, it runs the data through every single Decision Tree and takes the **major decision** as output. 
 
-```
+```python
 from sklearn.ensemble import RandomForestRegressor
 rf = RandomForestRegressor(random_state=1)
 rf.fit(train_X, train_y)
@@ -75,6 +75,41 @@ The first segment refers to the variety of **Data Sources and Technologies**. He
 The second segment refers to so-called **Data Frameworks** (e.g. Pandas or Apache Spark). These frameworks or libraries provide data structures and methods to handle the data. The selection of an adequate Data Framework is often based on the amount, size and type of data. 
 
 The third segment refers to variety of **analytical, statistical and mathematical methods** which are used by Data Scientists. These methods can range from statistical basics, over regression models to Machine Learning Models. 
+
+## Recommendation Systems
+Recommendation Systems or Recommendation Engines are ML-based systems to recommend a product (or datapoint) based on ratings, content, metadata or user and behavior similarities. At least, you can differ between three types of recommenders. The following examples are related to the IMDB Top 250 dataset, which you can find on [Kaggle](https://www.kaggle.com/rounakbanik/the-movies-dataset).
+
+### Simple Ranking Recommender 
+This type on Recommender is is very trivial. The recommendation is based on the rankings given by the users. To make the rankings comparable, you have to calculate the weighted rating for each movie in the dataset. Here we can used the following formula:
+
+FORMEL Weighted rating with description
+
+Based on the weigthed rankings (see score column in the example), we are now able to recommend best rated movies to the user. 
+
+```pyhton
+import pandas as pd
+data = pd.read_csv("../data/movies_metadata.csv")
+
+# Number of votes garnered by the 80th percentile movie
+m = data.vote_count.quantile(0.80)
+
+# Only consider movies that have more than m votes
+movies = data[movies.vote_count >= m]
+
+C = data.vote_average.mean()
+
+def weighted_rating(x, m=m, C=C):
+    v = x.vote_count
+    R = x.vote_average
+    return (v/(v+m) * R) + (m/(m+v) * C)
+
+movies['score'] = movies.apply(weighted_rating, axis=1)
+
+# Sort data by descending score
+movies = movies.sort_values('score', ascending=False)
+```
+
+
 
 
 
