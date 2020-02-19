@@ -76,6 +76,37 @@ The second segment refers to so-called **Data Frameworks** (e.g. Pandas or Apach
 
 The third segment refers to variety of **analytical, statistical and mathematical methods** which are used by Data Scientists. These methods can range from statistical basics, over regression models to Machine Learning Models. 
 
+## Similarity Measures
+An important task in Data Science research is comparing different datapoints with each other to explore similarities and correlations. Here are some major measurement techniques:
+
+### Euclidean Distance (L2-Norm)
+The Euclidean Distance is a basic measurement of similarity. For the sake of simplicity, it is the length of the line segment connecting two points in n-dimensional euclidean space. See the following formula to calculate the Euclidean Distance between two points:
+
+FORMULA
+
+The lower the Euclidean Distance, the more similar are the vectors and the datapoints.
+
+### Pearson Correlation
+The Pearson Correlation emphasis the similarity and correlation between to vectors or datapoints. It results in a score between -1 (total correlation) and 1 (total positiv correlation). To calculate the Pearson Correlation, we make use of following formula:
+
+FORMULA
+
+```python
+from scipy.stats import pearsonr
+pearsonr(v1, v2)
+```
+
+### Cosine Similarity
+The Cosine Simularity is a common used measurement. It calculates the cosine value of the angle between two vectors or datapoints. A consine value of 1 indicates total similarity and a cosine value of -1 indicates total dissimilarity.
+
+FORMULA
+
+```python
+from sklearn.metrics.pairwise import cosine_similarity
+cosine_similarity(v1, v2)
+```
+
+
 ## Recommendation Systems
 Recommendation Systems or Recommendation Engines are ML-based systems to recommend a product (or datapoint) based on ratings, content, metadata or user and behavior similarities. At least, you can differ between three types of recommenders. The following examples are related to the IMDB Top 250 dataset, which you can find on [Kaggle](https://www.kaggle.com/rounakbanik/the-movies-dataset).
 
@@ -114,22 +145,22 @@ This type of Recommender uses explicit information given by the user on his favo
 
 ```python
 movies = gen_df.copy()
-    movies = movies[(movies[genre] == 1) &
-                   (movies.runtime >= low_time) &
-                   (movies.runtime <= high_time) &
-                   (movies.year >= low_year) &
-                   (movies.year <= high_year)]
-    
-    # Compute the weightes score 
-    C = movies.vote_average.mean()
-    m = movies.vote_count.quantile(percentile)
-    
-    q_movies = movies.copy().loc[movies.vote_count >= m]
-    
-    q_movies['score'] = q_movies.apply(lambda x: (x['vote_count']/(x['vote_count'] + m) * x['vote_average']) + (m/(m + x['vote_count']) * C), axis=1) 
-    
-    # Sort movies
-    q_movies = q_movies.sort_values('score', ascending=False)
+movies = movies[(movies[genre] == 1) &
+               (movies.runtime >= low_time) &
+               (movies.runtime <= high_time) &
+               (movies.year >= low_year) &
+               (movies.year <= high_year)]
+
+# Compute the weightes score 
+C = movies.vote_average.mean()
+m = movies.vote_count.quantile(percentile)
+
+q_movies = movies.copy().loc[movies.vote_count >= m]
+
+q_movies['score'] = q_movies.apply(lambda x: (x['vote_count']/(x['vote_count'] + m) * x['vote_average']) + (m/(m + x['vote_count']) * C), axis=1) 
+
+# Sort movies
+q_movies = q_movies.sort_values('score', ascending=False)
 ```
 
 ### Data-based Recommender
