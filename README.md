@@ -140,7 +140,7 @@ movies['score'] = movies.apply(weighted_rating, axis=1)
 movies = movies.sort_values('score', ascending=False)
 ```
 
-### Knowledge Filetering
+### Knowledge Filtering
 This type of Recommender uses explicit information given by the user on his favorites. Based on this input you can simply filter the dataset and recommend the movies with the best scores. 
 
 ```python
@@ -232,7 +232,7 @@ To clarify the process of PCA, please have a look to this [StatQuest Video on PC
 from sklearn.decomposition import PCA
 pca = PCA(n_components)
 pca_data = pca.fit_transform(normalized_X)
-pca_data = pandas.DataFrame(data=pca_data, columns=['PC1', 'PC2']
+pca_data = pandas.DataFrame(data=pca_data, columns=['PC1', 'PC2'])
 
 # Get the ratio of variance for each PC
 ratios = pca.explained_variance_ratio_
