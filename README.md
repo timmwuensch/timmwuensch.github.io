@@ -36,10 +36,22 @@ To calculate the Gini Impurity of a non boolean feature like *weight* we have to
 
 When it comes to ranked or classified data, you have to calculate the Gini Impurity for each combination of classes or rank intervals. 
 
+```
+from sklearn.tree import DecisionTreeRegressor
+dt = DecisionTreeRegressor(random_state=1)
+dt.fit(train_X, train_y)
+```
+
 ## Random Forest
 A Random Forest is an ensemble of numerous Decision Trees which are randomly build. They are generated from different subsets of the original data which is also called Bootstraped Data. Instead of the entire dataset, these subsets consist of randomly selected features and data rows. The diffenrent subsets lead to *n* different Decision Trees which are combined in ensemble structure of the Random Forest. 
 
 When inserting new data into the Random Forest, it runs the data through every single Decision Tree and takes the **major decision** as output. 
+
+```
+from sklearn.ensemble import RandomForestRegressor
+rf = RandomForestRegressor(random_state=1)
+rf.fit(train_X, train_y)
+```
 
 ## Support Vector Machines
 ## k-Nearest Neighbor
