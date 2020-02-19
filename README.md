@@ -117,7 +117,7 @@ FORMEL Weighted rating with description
 
 Based on the weigthed rankings (see score column in the example), we are now able to recommend best rated movies to the user. 
 
-```pyhton
+```python
 import pandas as pd
 data = pd.read_csv("../data/movies_metadata.csv")
 
