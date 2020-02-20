@@ -243,6 +243,23 @@ pca_data = pandas.DataFrame(data=pca_data, columns=['PC1', 'PC2'])
 ratios = pca.explained_variance_ratio_
 ```
 
+## Regression Analysis 
+Regression Analysis is a statistical modelling technique to investigate the relationship (correlation) between at least to data variables, the dependent variable (target) and the independent variable (predictor). It can be used for forcasting, time series modelling and finding a causal realtionship. 
+
+![Common Regression Visualization](images/regressions.JPG "Common Regression Visualization")
+
+There are a lot of different Regression Models, so lets take a look on the three most common types.
+
+**Linear Regression** finds the best fit straight line (regression line) between the dependent and independent variable.
+
+**Logistic Regression** is used when the dependent variable is binary (0,1). This method is widely used for classification problems.
+
+**Polynomial Regression** is used when the power of the independent variable is more than 1. 
+
+```python
+from sklearn.linear_model import LinearRegression
+regression = LinearRegression()
+regressor.fit(X_train, y_train)
 
 
 
