@@ -118,7 +118,7 @@ Recommendation Systems or Recommendation Engines are ML-based systems to recomme
 ### Simple Ranking Recommender 
 This type on Recommender is is very trivial. The recommendation is based on the rankings given by the users. To make the rankings comparable, you have to calculate the weighted rating for each movie in the dataset. Here we can used the following formula:
 
-FORMEL Weighted rating with description
+![Formula for Weighted Sum Calculation](images/simple_recommender.JPG "Formula for Weighted Sum Calculation")
 
 Based on the weigthed rankings (see score column in the example), we are now able to recommend best rated movies to the user. 
 
