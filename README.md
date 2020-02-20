@@ -90,7 +90,25 @@ neigh.fit(X_train, y_train)
 neigh.predict(X_test)
 ```
 
-## k-Means Clustering
+## Clustering
+Clustering is a popular technique to find unknown patterns and groups in dataspace. A common example of clustering algorthms is k-Means Clustering.
+
+**k-Means Clustering** is an unsupervised clustering algorithm that takes a predefined number of clusters (*k*) and repeately performs the last two of the following steps:
+
+- **Initializing:*** Choose *k* randomly selected points in the dataspace.
+- **Mapping:** Map every datapoint to its nearest cluster. 
+- **Updating the center:** Calculate the new means (centroids) of the oberservations in the new cluster.
+
+To find the optimal amount of clusters *k* please have a look on the [Elbow Method](https://pythonprogramminglanguage.com/kmeans-elbow-method/).
+
+```python
+from sklearn.cluster import kMeans
+kmeans = kMeans(n_clusters=3, init='random', max_iter=10)
+kmeans.fit(X_train)
+y_pred = kmeans.predict(X_test)
+centroids = kmeans.cluster_clusters_
+```
+
 ## Deep Learning
 ## Convolutional Neural Networks
 ## Reinforcement Learning
