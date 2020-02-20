@@ -2,12 +2,12 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
 
 #### Table of contents
 1. [Machine Learning](#machine-learning)
-    1.1 [Decision Tree](#decision-tree)
-    1.2 [Random Forest](#random-forest)
+    [Decision Tree](#decision-tree)
+    [Random Forest](#random-forest)
 2. [Data Science](#data-science)
-    2.1 [Similarity Measures](#similarity-measures)
-    2.2 [Recommendation Systems](#recommendation-systems)
-    2.3 [Dimensionality Reduction](#dimensionality-reduction)
+    [Similarity Measures](#similarity-measures)
+    [Recommendation Systems](#recommendation-systems)
+    [Dimensionality Reduction](#dimensionality-reduction)
 
 # Machine Learning
 Machine Learning in general is the ability of computer systems to learn patterns and to generalize data. Based on this patterns, it is possible to make decisions and forecast future behavior for unknown data.
