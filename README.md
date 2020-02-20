@@ -4,11 +4,14 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
 1. [Machine Learning](#machine-learning)
     - [Decision Tree](#decision-tree)
     - [Random Forest](#random-forest)
+    - [Support Vector Machine](#support-vector-machine)
+    - [Nearest Neighbor](#nearest-neighbor)
 2. [Data Science](#data-science)
     - [Similarity Measures](#similarity-measures)
     - [Recommendation Systems](#recommendation-systems)
     - [Dimensionality Reduction](#dimensionality-reduction)
     - [Regression Analysis](#regression-analysis)
+    - [Data Warehouse](#data-warehouse)
 
 # Machine Learning
 Machine Learning in general is the ability of computer systems to learn patterns and to generalize data. Based on this patterns, it is possible to make decisions and forecast future behavior for unknown data.
@@ -73,7 +76,7 @@ svclassifier.fit(X_train, y_train)
 y_pred = svclassifier.predict(X_test)
 ```
 
-## k-Nearest Neighbor
+## Nearest Neighbor
 This is a very easy supervised algorithm for classification and regression problems. The idea is, to find a number of *k* nearest neighbors (datapoints) in the dataspace and propagate the major or mean result. 
 
 IMAGE kNN
