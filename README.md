@@ -8,6 +8,7 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
     - [Similarity Measures](#similarity-measures)
     - [Recommendation Systems](#recommendation-systems)
     - [Dimensionality Reduction](#dimensionality-reduction)
+    - [Regression Analysis](#regression-analysis)
 
 # Machine Learning
 Machine Learning in general is the ability of computer systems to learn patterns and to generalize data. Based on this patterns, it is possible to make decisions and forecast future behavior for unknown data.
@@ -260,6 +261,31 @@ There are a lot of different Regression Models, so lets take a look on the three
 from sklearn.linear_model import LinearRegression
 regression = LinearRegression()
 regressor.fit(X_train, y_train)
+```
+
+## Data Warehouse 
+A DWH is a centralized database system that is used to consolidate data from different data sources in order to run complex analytics on a single point of truth. It is often implemented in a cloud computing infrastructure and based on **Online Analytical Processing (OLAP)**. 
+
+OLAP is an approach to handle multi-dimensional analytical data queries that is mostly optimized for read actions. It is contrasted to Online Transactional Processing (OLTP), which is characterized by much less complex queries, in a larger volume and in order run database transactions. 
+
+Compared to a nomal database that is designed to record data, a DWH is designed to analyse data. The key difference is the size of storage and the query latency. Furthermore the data of a DWH is often denormalized and thus easier to join.
+
+![Data Warehouse](images/dwh.JPG "Data Warehouse")
+
+The process of transfering data from different data sources to the DWH is used to be implemented with the help of **ETL-Pipelines** (Extract, Transform, Load). Please see the following sub-chapter for more information about ETL-Pipelines.
+
+Common providers of DWH solutions are Amazon Redshift, TerraData, Oracle and Pentaho.
+
+### ETL-Pipelines 
+ETL is a process to transform and consolidate heterogene data from different source into a target database or DWH. This process is based on three main steps: Extraction, Transformation and Loding. 
+
+**Extraction** of data is the first step. Here we load data from different sources and of different structure into the working environment. There are different strategies to handle new data changes that can be divided into synchronical and asynchronical extraction. Synchronical extraction means that every change in the data source is instantly propagated to DWH (Real-time Data Warehousing). For asynchronical extraction we can extract data periodicly, event-based or on-demand. 
+
+The **Transformation** of data that we extracted before, is the next step. This sub-process happens in a special environment, which is called the Staging Area. Here we clean and sanitize our data and bring it into a scheme, that can be joined with the data in our DWH. We differ between syntactical transformations (e.g. format transformation) and semantical transformations (e.g. key definition or normalization).
+
+**Loding** is the finals step of ETL-process. The we convert the data into the required type or format. Depending on the target, this can vary from simple csv structures to complex file systems.
+
+Especially due to the last point of complex file formats for DWHs, it is recommended to use special tools for ETL-Pipelining. Further advantages are performance, easy development and maintenance. Well-known providers for ETL-tools are Kettle Pentaho Data Integration or Xplenty. 
 
 
 
