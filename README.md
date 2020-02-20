@@ -2,7 +2,12 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
 
 #### Table of contents
 1. [Machine Learning](#machine-learning)
+    1.2 [Decision Tree](#decision-tree)
+    1.2 [Random Forest](#random-forest)
 2. [Data Science](#data-science)
+    2.1 [Similarity Measures](#similarity-measures)
+    2.2 [Recommendation Systems](#recommendation-systems)
+    2.3 [Dimensionality Reduction](#dimensionality-reduction)
 
 # Machine Learning
 Machine Learning in general is the ability of computer systems to learn patterns and to generalize data. Based on this patterns, it is possible to make decisions and forecast future behavior for unknown data.
@@ -82,14 +87,14 @@ An important task in Data Science research is comparing different datapoints wit
 ### Euclidean Distance (L2-Norm)
 The Euclidean Distance is a basic measurement of similarity. For the sake of simplicity, it is the length of the line segment connecting two points in n-dimensional euclidean space. See the following formula to calculate the Euclidean Distance between two points:
 
-FORMULA
+![Formula of Euclidean Distance Calculation](images/euclidean_formula.JPG "Formula of Euclidean Distance Calculation")
 
 The lower the Euclidean Distance, the more similar are the vectors and the datapoints.
 
 ### Pearson Correlation
 The Pearson Correlation emphasis the similarity and correlation between to vectors or datapoints. It results in a score between -1 (total correlation) and 1 (total positiv correlation). To calculate the Pearson Correlation, we make use of following formula:
 
-FORMULA
+![Formula of Pearson Correlation Calculation](images/pearson_formula.JPG "Formula of Pearson Correlation Calculation")
 
 ```python
 from scipy.stats import pearsonr
@@ -99,7 +104,7 @@ pearsonr(v1, v2)
 ### Cosine Similarity
 The Cosine Simularity is a common used measurement. It calculates the cosine value of the angle between two vectors or datapoints. A consine value of 1 indicates total similarity and a cosine value of -1 indicates total dissimilarity.
 
-FORMULA
+![Formula of Cosine Similarity Calculation](images/cosine_formula.JPG "Formula of Cosine Similarity Calculation")
 
 ```python
 from sklearn.metrics.pairwise import cosine_similarity
