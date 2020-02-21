@@ -134,10 +134,18 @@ The Error results in a certain numeric value for each training example. After po
 Infact, we adjust the weights and biases of our network to reduce the average cost. The calculation of the Negative Gradient is called **Back Propagation**. This alogirthm uses derivations and the chain rule to produce a vector of Hyperparameter Changes to adjust the values in our Network.
 
 ### Activation Function
+The Activation Function reprensents the activation level a neuron. In the past, the most commen Activation Functions were *Sigmoid* and *tanh*. These algorithms are more close to the biological model, but they have a significant problem. They suffer of a **Vanishing Gradient**, that you can see in the fllowing figure:
 
-### Cost Function
+IMAGE Activations Functions
 
-### Back Propagation
+In each plot we see the Activation Function (blue) and its derivation (red). In both right plots we can see, that the gradient (the derivation of the Activation Function) becomes vanishing small. This behavior supresses or even prevents the weight from changing its value, what makes the training more difficult and slower. For this reason, we often make use of the Rectified Linear Unit (ReLU) Activation Function.
+
+There is one particularity when it comes to classification problems with discrete outputs. Here we often use Softmax as the Activation Function for the Output Layer, which brings all activations to a sum of 1. This makes it easier to interprete classification probabilities. 
+
+### Cost Function and Optimization
+The Cost Function is used to calculate the difference the calculated activation of the output neurons and the actual result. The Mean Squared Error function ist the most trivial and often used for Regression Problems. When it comes to Classification Problems, (Categorical) Cross-Entropy and Logarithmic Loss are very recommended. To get more information about the implementation, please see this [article about Loss Functions](https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/).
+
+Additionally, there are some optimization techniques to improve the training. These methods commonly use statistical improvements, momentum and learn rate to empower the gradient adjustment. Here we can mention **Stochastic Gradient Descent (SGD)** and **Adaptive Moment Estimation (Adam)** for instance.
 
 
 
