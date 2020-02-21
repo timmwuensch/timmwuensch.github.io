@@ -96,7 +96,7 @@ Clustering is a popular technique to find unknown patterns and groups in dataspa
 
 **k-Means Clustering** is an unsupervised clustering algorithm that takes a predefined number of clusters (*k*) and repeately performs the last two of the following steps:
 
-- **Initializing:*** Choose *k* randomly selected points in the dataspace.
+- **Initializing:** Choose *k* randomly selected points in the dataspace.
 - **Mapping:** Map every datapoint to its nearest cluster. 
 - **Updating the center:** Calculate the new means (centroids) of the oberservations in the new cluster.
 
@@ -111,6 +111,37 @@ centroids = kmeans.cluster_clusters_
 ```
 
 ## Deep Learning
+Deep Learning is Machine Learning disciplin to solve classification and regression problems. It is based on **Artificial Neural Networks**, a complex structure of artificial neurons that. The structure and functionalities of Neural Networks are inspired by the human brain.
+
+![Sample NN Structure](images/neural_network.JPG "Sample NN Structure")
+
+This is a schematic diagram of a very simple Artificial Neural Network. It consists of an Input Layer with three Neurons that represent our data *x*, two Hidden Layer with each four Neurons and an Output Layer with two neurons. An example use case for this network could be a traffic light. Here the Network should evaluate to stop or to go ahead.
+
+Each Neuron *a* is connected with other Neurons on its adjacent layer. These connections have different *strenghts* which are implemented by numeric values called weights *w*. In this example, we see a Fully-Connected Feedforward Network where a Neuron is connected with *all* Neurons on the previous and follwing layer. 
+
+Based on the **weights and biases**, the network produces an output for a set of Input Data. These values are also known as **Hyperparameters**, that have to be trained and optimized on our Train Data. 
+
+![Activation of a Neuron](images/nn_activation.JPG "Activation of a Neuron")
+
+The figure above shows how to calculate the activation of a Neuron. It depends on the previous neruons, connecting weights, biases and on the used **Activation Function**. The choice of the optimal Activation Function is described in the subchapter below. In this case we use the **Rectified Linear Unit (ReLU)**. The entire calculation is based on matrices calculation as shown in the formula. 
+
+The weights and biases are initialized randomly. When we put data to our Input Layer, it results in a certain activation of the neurons on the Output Layer. Now we compare each activation of Neuron on the Ouptput Layer with the result *y* that we want the network to produce. The deviation of the calculated and the actual result is called Error. There are a couple of functions to calculate this error. In the figure below, we use the **Mean Squared Error** as our **Lost Function**. 
+
+![Cost Function of NN](images/nn_cost_function.JPG "Cost Function of NN")
+
+The Error results in a certain numeric value for each training example. After populating more training examples through the Network, we caculate the Average Cost over all calculated errors. The main intent is to reduce this Average Error. If we envision the Cost Function as a multi-dimensional function, the target is to find the global minimum of the function. Therefor, we calculate the **Negative Gradient** to go a stept towards the next local minimum in our multi-dimensional system. 
+
+Infact, we adjust the weights and biases of our network to reduce the average cost. The calculation of the Negative Gradient is called **Back Propagation**. This alogirthm uses derivations and the chain rule to produce a vector of Hyperparameter Changes to adjust the values in our Network.
+
+### Activation Function
+
+### Cost Function
+
+### Back Propagation
+
+
+
+
 ## Convolutional Neural Networks
 ## Reinforcement Learning
 ## Natural Language Processing
