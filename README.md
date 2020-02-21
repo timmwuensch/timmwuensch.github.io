@@ -6,6 +6,7 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
     - [Random Forest](#random-forest)
     - [Support Vector Machine](#support-vector-machine)
     - [Nearest Neighbor](#nearest-neighbor)
+    - [Clustering](#clustering)
 2. [Data Science](#data-science)
     - [Similarity Measures](#similarity-measures)
     - [Recommendation Systems](#recommendation-systems)
@@ -65,7 +66,7 @@ rf.fit(train_X, train_y)
 ## Support Vector Machine
 A Support Vector Machine is a supervised classification algorithm that tries to find a Hyperplane that seperates the data the best. In a 2-dimensional dataspace the hyperplane is in a straight line with equal distance to the Support Vectors of both classes (margin).
 
-IMAGE SVM
+![Support Vector Machine](images/svm.JPG "Support Vector Machine")
 
 The main idea behind a Support Vector Machine is to start in a relatively low dimension, move the data into a higher dimension and find a Support Vector Classifier that seperates the data into two groups. Therefor, the SVM use Kernel Functions to systemtically find Support Vector Classifiers in higher dimensions. For more information please hava a look on the [StatQuest Video about SVM](https://www.youtube.com/watch?v=efR1C6CvhmE).
 
@@ -79,7 +80,7 @@ y_pred = svclassifier.predict(X_test)
 ## Nearest Neighbor
 This is a very easy supervised algorithm for classification and regression problems. The idea is, to find a number of *k* nearest neighbors (datapoints) in the dataspace and propagate the major or mean result. 
 
-IMAGE kNN
+![k-Nearest Neighbor](images/nearest_neighbor.JPG "k-Nearest Neighbor")
 
 In the example above, the new datapoint finds two points of category C2 and one point of category C3 in its neighborhood. The majority of neighbors belong to category C2 and thus the new datapoint.
 
