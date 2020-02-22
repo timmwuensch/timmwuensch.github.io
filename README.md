@@ -7,6 +7,7 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
     - [Support Vector Machine](#support-vector-machine)
     - [Nearest Neighbor](#nearest-neighbor)
     - [Clustering](#clustering)
+    - [Deep Learning](#deep-learning)
 2. [Data Science](#data-science)
     - [Similarity Measures](#similarity-measures)
     - [Recommendation Systems](#recommendation-systems)
@@ -136,7 +137,7 @@ Infact, we adjust the weights and biases of our network to reduce the average co
 ### Activation Function
 The Activation Function reprensents the activation level a neuron. In the past, the most commen Activation Functions were *Sigmoid* and *tanh*. These algorithms are more close to the biological model, but they have a significant problem. They suffer of a **Vanishing Gradient**, that you can see in the fllowing figure:
 
-IMAGE Activations Functions
+![ThreeActivation Functions](images/activations.JPG "ThreeActivation Functions")
 
 In each plot we see the Activation Function (blue) and its derivation (red). In both right plots we can see, that the gradient (the derivation of the Activation Function) becomes vanishing small. This behavior supresses or even prevents the weight from changing its value, what makes the training more difficult and slower. For this reason, we often make use of the Rectified Linear Unit (ReLU) Activation Function.
 
