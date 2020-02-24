@@ -153,7 +153,7 @@ Additionally, there are some optimization techniques to improve the training. Th
 ## Convolutional Neural Networks
 A Convolutional Neural Network (CNN) is a special type of Neural Networks, which is used to process images in Neural Networks. A CNN consits of at least one **Convolutional Layer** that performs a mathematical convolution of the input matix and a certain number of kernel matrices. The process of convolution is partly visualized in the following figure:
 
-IMAGE
+![Convolution Visualization](images/convolution.JPG "Convolution Visualization")
 
 The main idea is, to slide a certain Kernel Matrix over the Input Data Matrix and multiply the values for each single step. Finally, we sum up the values of the resulting matrix and add the bais. This sum is used as an activation level in our Activation Map.
 
@@ -162,9 +162,6 @@ The intent of this operation is to find different representations of the input d
 Depending on the set of convolution parameters, it is also possible to reduce abstract image data and thus reduce the amount of information. In the example above, we reduce a 5x5 Input Matrix into a 3x3 Representation Matrix. Further, it is very popular to string different Convolutional Layer together.
 
 To get a better visualization of the process, please have a look on this [Article about CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53).
-
-
-## Natural Language Processing
 
 
 
