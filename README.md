@@ -1,4 +1,4 @@
-This is my private knowledge glossar about topics on Machine Learning and Data Science. It is created to give short and summarized descriptions on different topics, solutions and technologies.
+This is my private knowledge glossary about topics on Machine Learning and Data Science. It is created to give short and summarized descriptions on different topics, solutions and technologies.
 
 The content of this page is going to be extended by time.
 
