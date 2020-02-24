@@ -8,6 +8,7 @@ This is my knowledge glossar about topics on Machine Learning and Data Science. 
     - [Nearest Neighbor](#nearest-neighbor)
     - [Clustering](#clustering)
     - [Deep Learning](#deep-learning)
+    - [Convolutional Neural Networks](#convolutional-neural-networks)
 2. [Data Science](#data-science)
     - [Similarity Measures](#similarity-measures)
     - [Recommendation Systems](#recommendation-systems)
@@ -149,10 +150,20 @@ The Cost Function is used to calculate the difference the calculated activation 
 Additionally, there are some optimization techniques to improve the training. These methods commonly use statistical improvements, momentum and learn rate to empower the gradient adjustment. Here we can mention **Stochastic Gradient Descent (SGD)** and **Adaptive Moment Estimation (Adam)** for instance.
 
 
-
-
 ## Convolutional Neural Networks
-## Reinforcement Learning
+A Convolutional Neural Network (CNN) is a special type of Neural Networks, which is used to process images in Neural Networks. A CNN consits of at least one **Convolutional Layer** that performs a mathematical convolution of the input matix and a certain number of kernel matrices. The process of convolution is partly visualized in the following figure:
+
+IMAGE
+
+The main idea is, to slide a certain Kernel Matrix over the Input Data Matrix and multiply the values for each single step. Finally, we sum up the values of the resulting matrix and add the bais. This sum is used as an activation level in our Activation Map.
+
+The intent of this operation is to find different representations of the input data. Different representations lead to different **Image Features** like edges, corners, patterns or even almost invisible features. These representations depend on the related kernel matrix and are also called **Activations Maps**.
+
+Depending on the set of convolution parameters, it is also possible to reduce abstract image data and thus reduce the amount of information. In the example above, we reduce a 5x5 Input Matrix into a 3x3 Representation Matrix. Further, it is very popular to string different Convolutional Layer together.
+
+To get a better visualization of the process, please have a look on this [Article about CNNs](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53).
+
+
 ## Natural Language Processing
 
 
