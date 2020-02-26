@@ -11,11 +11,13 @@ The content of this page is going to be extended by time.
     - [Clustering](#clustering)
     - [Deep Learning](#deep-learning)
     - [Convolutional Neural Networks](#convolutional-neural-networks)
+    - [Natural Language Processing](#natural-language-processing)
 2. [Data Science](#data-science)
     - [Similarity Measures](#similarity-measures)
     - [Recommendation Systems](#recommendation-systems)
     - [Dimensionality Reduction](#dimensionality-reduction)
     - [Regression Analysis](#regression-analysis)
+    - [Naive Bayes Classifier](#naive-bayes-classifier)
     - [Data Warehouse](#data-warehouse)
 
 # Machine Learning
@@ -438,7 +440,7 @@ regressor.fit(X_train, y_train)
 ## Naive Bayes Classifier
 Naive Bayes probabilistic machine learning method which is mostly used for classification tasks. It is based on the Bayes Theorem, as shown in the following figure:
 
-IMAGE
+![Naive Bayes Theorem](images/naive_bayes.JPG "Naive Bayes Theorem")
 
 Imagine we have a data structure with a set of **independent** features and a column with assigned values of classification. To transfer this information to our Naive Bayer Classifier, we define *y* as our class variable and *X* as our set of features. Now we can calculate each of the components with a look on our data set. There are at leat three types of Naive Bayes Classifiers to differ. 
 
