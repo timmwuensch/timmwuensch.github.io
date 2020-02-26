@@ -232,6 +232,15 @@ tokenizer = PunktSentenceTokernizer(train_text)
 tokenized = tokenizer.tokenize(sample_text)
 ```
 
+**Modelling**
+
+After sanitizing and cleaning the text data, we can use an embedding of the words and its occurences to train a machine learning model. This training can either be supervised (Naive Bayes, RF, DL) or unsupervised (Latent Dirichlet Allocation). 
+
+
+
+
+
+
 # Data Science
 The challenge behind Data Science is to turn data into information. These information could be used to support business processes with advanced analytics, predictions and decisions. The tasks of a Data Scientist partly overlaps with Machine Learning, but there are still differences between both field of research. 
 
@@ -425,6 +434,27 @@ from sklearn.linear_model import LinearRegression
 regression = LinearRegression()
 regressor.fit(X_train, y_train)
 ```
+
+## Naive Bayes Classifier
+Naive Bayes probabilistic machine learning method which is mostly used for classification tasks. It is based on the Bayes Theorem, as shown in the following figure:
+
+IMAGE
+
+Imagine we have a data structure with a set of **independent** features and a column with assigned values of classification. To transfer this information to our Naive Bayer Classifier, we define *y* as our class variable and *X* as our set of features. Now we can calculate each of the components with a look on our data set. There are at leat three types of Naive Bayes Classifiers to differ. 
+
+The **Multinomial Naive Bayes** is mostly used for document classification problem. A good example is the classification of text into categories of plotics, sports, technology, etc. The features could be the frequency of words in the text.
+
+The **Bernoulli Naive Bayes** is similar to the Multinomial one but the features are boolean variables. For example, wether a words occurs in a text or not.
+
+The **Gaussian Naive Bayes** is prefered, when the features are continuous values. We assume that they are sampled from a Gaussian Distribution.
+
+```python
+from sklearn.naive_bayes import GaussianNB
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+pred = gnb.predict(X_test)
+```
+
 
 ## Data Warehouse 
 A DWH is a centralized database system that is used to consolidate data from different data sources in order to run complex analytics on a single point of truth. It is often implemented in a cloud computing infrastructure and based on **Online Analytical Processing (OLAP)**. 
