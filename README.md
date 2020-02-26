@@ -170,6 +170,7 @@ To get a better visualization of the process, please have a look on this [Articl
 NLP is a field of AI and a discipline of ML that focuses on the interaction between Data Science and human language and gives machine the ability to read, understand and derive the meaning and sentiment from language. It it used in almost all language-based use cases, like spam recognition, identifying fake news, voice-driven interfaces or even chatbots. The aproach to NLP-problems is always depending on the specific language and use case, but there are several common methods.
 
 **Tokenization**
+
 Tokenization is has the intent to segment and seperate the entire text into single sentences or even single words. This makes it easier to interprete and process the information. Altough it sounds like a trivial task, tokanization leads to some problems when it comes to names, foreign phrases or composed words. 
 
 ```python
@@ -180,6 +181,7 @@ sent_tokens = sent_tokenize(text)
 ```
 
 **Stop Words Removal**
+
 This process is used to reduce the amount of unnecessary data and get rid of common language articles, pronouns and prepositions. 
 
 ```python
@@ -189,6 +191,7 @@ cleaned_word_tokens = [word for word in word_tokens if not word in stop_words]
 ```
 
 **Stemming**
+
 The idea of stemming is to reduce variations of words with the same meaning to their original stem. It is a sort of normalizing method and cleans the words from tenses and affixes. For example, "write", "written" and "writing" end up into the stem "writ". This improves the further processing due to the reduction of redundant data.
 
 ```python
@@ -199,6 +202,7 @@ stems = [ps.stem(word) for word in example_words]
 ```
 
 **Lemmatizing**
+
 This method reduces variation of words to their root word. In contrast to Stemming, which returns the sometimes senseless stem of words. For example, "write", "written" and "writing" results into "write" as the root word.
 
 While using the Lemmatizer from nltk, you further can specify the *Part-of-Speech Constant*. Please see the implementation for abbrevations.
@@ -210,6 +214,22 @@ print(lemmatizer.lemmatize("rocks")
 
 # ADJ, ADJ_SAT, ADV, NOUN, VERB = a, s, r, n, v
 print(lemmatizer.lemmatize("run", pos='v')
+```
+
+**Part of Speech Tagging**
+
+As already mentioned in specific Lemmatizing, we can classify each word to their POS (e.g. noun, verb, adjective). To see a list of all types of POS please follow this [link](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html).
+
+For the implementation we introduce a new sentence takenizer, called PunktSentenceTokanizer. This is an unsupervised learning method which has to be trained in advance. Here we can use any kind of text.
+
+```python
+from nltk.corpus import state_union
+from nltk.tokenize import PunktSentenceTokenizer
+train_text = state_union.raw("2005-GWBush.txt")
+sample_text = state_union.raw("2006-GWBush.txt")
+
+tokenizer = PunktSentenceTokernizer(train_text)
+tokenized = tokenizer.tokenize(sample_text)
 ```
 
 # Data Science
