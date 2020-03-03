@@ -472,13 +472,13 @@ The process of transfering data from different data sources to the DWH is used t
 Common providers of DWH solutions are Amazon Redshift, TerraData, Oracle and Pentaho.
 
 ### ETL-Pipelines 
-ETL is a process to transform and consolidate heterogene data from different source into a target database or DWH. This process is based on three main steps: Extraction, Transformation and Loding. 
+ETL is a process to transform and consolidate heterogene data from different source into a target database or DWH. This process is based on three main steps: Extraction, Transformation and Loading. 
 
 **Extraction** of data is the first step. Here we load data from different sources and of different structure into the working environment. There are different strategies to handle new data changes that can be divided into synchronical and asynchronical extraction. Synchronical extraction means that every change in the data source is instantly propagated to DWH (Real-time Data Warehousing). For asynchronical extraction we can extract data periodicly, event-based or on-demand. 
 
 The **Transformation** of data that we extracted before, is the next step. This sub-process happens in a special environment, which is called the Staging Area. Here we clean and sanitize our data and bring it into a scheme, that can be joined with the data in our DWH. We differ between syntactical transformations (e.g. format transformation) and semantical transformations (e.g. key definition or normalization).
 
-**Loding** is the finals step of ETL-process. The we convert the data into the required type or format. Depending on the target, this can vary from simple csv structures to complex file systems.
+**Loading** is the finals step of ETL-process. The we convert the data into the required type or format. Depending on the target, this can vary from simple csv structures to complex file systems.
 
 Especially due to the last point of complex file formats for DWHs, it is recommended to use special tools for ETL-Pipelining. Further advantages are performance, easy development and maintenance. Well-known providers for ETL-tools are Kettle Pentaho Data Integration or Xplenty. 
 
