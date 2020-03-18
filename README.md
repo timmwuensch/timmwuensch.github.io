@@ -19,6 +19,7 @@ The content of this page is going to be extended by time.
     - [Regression Analysis](#regression-analysis)
     - [Naive Bayes Classifier](#naive-bayes-classifier)
     - [Data Warehouse](#data-warehouse)
+3. [Further Knowledge](#further-knowledge)
 
 # Machine Learning
 Machine Learning in general is the ability of computer systems to learn patterns and to generalize data. Based on this patterns, it is possible to make decisions and forecast future behavior for unknown data.
@@ -481,6 +482,60 @@ The **Transformation** of data that we extracted before, is the next step. This 
 **Loading** is the finals step of ETL-process. The we convert the data into the required type or format. Depending on the target, this can vary from simple csv structures to complex file systems.
 
 Especially due to the last point of complex file formats for DWHs, it is recommended to use special tools for ETL-Pipelining. Further advantages are performance, easy development and maintenance. Well-known providers for ETL-tools are Kettle Pentaho Data Integration or Xplenty. 
+
+
+
+
+# Further Knowledge
+
+## Continuous Integration and Delivery
+**Continuous Integration (CI)** is a Software Development Practise of automating the integration of code changes from multiple developers into a single software project. CI often comes along with Agil Software Development with a team of multiple developers. The fundamental basis of a CI pipeline is a Version Control System (like Gitlab or Bitbucket) where the team works on a specific project repository. When a member wants to commit code changes to the repository, the code runs through the predefined CI pipeline. Here the code has to succeed various unit tests regarding the syntax, format and dependecies. 
+
+The benefits of CI are numerous. It improves productivity in paralell work sessions, enables scaling, improves feedback and enhances the communication and overall code quality. 
+
+**Continuous Delivery (CD)** is an extension of CI that makes it possible to deploy and release changes to customers or production in a quick and sustainable way. This includes unit and code test of CI and automated deployment of changes and release of the new product. 
+
+
+## Agile Software Development 
+Agile Project and Software Development are based on the Agile Manifest, which describes ideas, principles and values to improve methods of development. The main ideas are:
+
+- focus more on individuals and their interactions
+- a running software is more important than a detailes documentation
+- enhance the teamwork and the communication with the customer 
+- be more flexible regarding changing requirements and targets 
+
+There are some **Agile Methods** to define well known strategies and structures of techniques:
+
+- Lean Startup (A method to create a product with a minimum of costs and effort. The idea is to reduce the product to its Minimum Viable Product (MVP), measure the reaction of customers and learn from these measurements and improve the product.)
+- Design Thinking (A method to solve complex problems systematically by looking through the users eyes: Understand, Observe, Concrete Views, Find Ideas, Develop a Prototype, Test the Prototype.)
+- Business Model Canvas (A graphical representation of the business model and idea.)
+
+**Agile Techniques** are smaler packages and specific procedures to realize agile principles:
+
+- Task Board (An overview of project tasks)
+- Daily Standup Meeting (A short daily exchange of proceeds and problems)
+- Definition of Use Cases (A technique to clarify the customers requirements)
+
+## SCRUM
+In an IT development context, SCRUM is a framework to adapt agile methods and techniques on software development projects. It defines different roles, activities and artifacts.
+
+**Roles**
+- Product Owner (Responsible for maximizing the return on investment (ROI) by identifying product features and prioritizing them. He owns the *Product Backlog*.)
+- Scrum Master (He helps the team to remove impediments, protects it from outside interference and helps it to adopt Agile Development Practices.) 
+- Scrum Team (Collection of developers and individuals to work on the project.)
+
+**Artifacts**
+- Product Backlog (A set of all baseline requirements prioritized in order. A living artifact and subjected to changes.)
+- Sprint Backlog (A subset of the Product Backlog and essentially a list of ToDos a development team might be working during the current sprint.)
+- Product Increment (A piece of working software that results from a sprint and has to accepted by the Product Owner.)
+
+**Activities**
+- Sprint Planning (An event that kick starts each sprint. Here the Product Owner and development team discuss which Product Backlog Items (PBI’s) will be included in Sprint. The result is a sprint goal and a Sprint Backlog.)
+- Daily Scrum (A 15 minutes meeting to review and plan activities of the team.)
+- Sprint Review (A meeting at the end a sprint to present working features to the team and other stakeholders.)
+- Sprint Retrospective (A final meeting at the end of a sprint to recapture and improve methods and techniques for future sprints.)
+
+
 
 
 
