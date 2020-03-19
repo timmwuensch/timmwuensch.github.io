@@ -20,6 +20,9 @@ The content of this page is going to be extended by time.
     - [Naive Bayes Classifier](#naive-bayes-classifier)
     - [Data Warehouse](#data-warehouse)
 3. [Further Knowledge](#further-knowledge)
+    - [Continuous Integration and Delivery](#continuous-integration-and-delivery)
+    - [Agile Software Development](#agile-software-development)
+    - [SCRUM](#scrum)
 
 # Machine Learning
 Machine Learning in general is the ability of computer systems to learn patterns and to generalize data. Based on this patterns, it is possible to make decisions and forecast future behavior for unknown data.
@@ -483,7 +486,41 @@ The **Transformation** of data that we extracted before, is the next step. This 
 
 Especially due to the last point of complex file formats for DWHs, it is recommended to use special tools for ETL-Pipelining. Further advantages are performance, easy development and maintenance. Well-known providers for ETL-tools are Kettle Pentaho Data Integration or Xplenty. 
 
+### Data Warehousing Methodology
+1. Identify and profile operational Data Sources.
+2. Develop a Dimensional Model that includes Dimensions and Facts (or Measures).
+3. Implement the Dimensional Model in an appropriate Data Base System. Create tables, collections and data structures.
+4. Create ETL tasks that transform data into the Dimensional Model structure.
+5. Use ETL tasks to perform an initial load of data into the DWH.
+6. Schedule a set of ETL jobs to perform incremental data loads.
+7. Develop Business Analytics Reports, dashboards, apps or other UIs.
 
+
+## Dimensional Modelling
+A Dimensional Model is a data structure technique, which is optimized for DWH systems. In contrast to Relational Models, which are optimized for addition, updating and deletion of data, a Dimensional Model is designed to read, summarize and analyze numeric information like values, balances, counts and weights. The concept was developed by Ralph Kimball.
+
+In a Dimensional Model we differ between 3 types of data (Dimensions, Facts and Attributes) and 2 types of tables (Dimension Table and Fact Table) that are organized in a certain schema (Star Schema, Snowflake Schema or Galaxy Schema).
+
+A **Dimension** is the context surrounding a business process event. It provides a different windows to view information in the facts and describe the who, what and where of a fact. Common dimension are Location, Time or Products.
+
+A **Fact** is a measurement, metric or simply fact of a business process. Their common type is numeric.
+
+**Attributes** are the various characteristics of the dimension. A *Location* dimension could have attributes like *State, Country or ZIP-code*.
+
+IMAGE OF A DIMENSIONAL MODEL
+
+The **Fact Table** is the central element of the Dimensional Model. Each **Dimensional Table** represents a Dimension and is joined to the Fact Table via Foreign Keys. Dimension Tables are de-normalized tables. 
+
+**Steps of Dimensional Modelling:**
+1. Identify the Business Process - Here you should clarify the intent of the DWH (e.g. for Marketing, Sales or HR). To describe the Business Process you can use plain text, BPMN or UML.
+2. Identify the Grain - The Grain is the level of of detail for the Business Process and the lowest level of information in any table. This could be a daily granularity for daily sales data. Commun question to define the grain: Do we need to store all existing data? Do we store data on a hourly, daily or monthly basis? How does it affect the database size? A possible grain could be: "product sale information by location by day"
+3. Identify the Dimensions - Dimensions are nouns like date, store, inventory etc. 
+4. Identify the Fact - Facts are mostly numerical values like price or cost per unit.
+5. Build a Schema - This Schema defines the database structure. There are three cummon used types of schemas:
+
+IMAGE OF THREE TYPE OF SCHEMAS 
+
+The benefits of a Dimensional Model are the facts, that they are easier to understand, optimized for high performance and optimized for retrieval (SELECT queries).
 
 
 # Further Knowledge
