@@ -507,7 +507,7 @@ A **Fact** is a measurement, metric or simply fact of a business process. Their 
 
 **Attributes** are the various characteristics of the dimension. A *Location* dimension could have attributes like *State, Country or ZIP-code*.
 
-IMAGE OF A DIMENSIONAL MODEL
+![Star Schema](images/star_schema.JPG "Star Schema")
 
 The **Fact Table** is the central element of the Dimensional Model. Each **Dimensional Table** represents a Dimension and is joined to the Fact Table via Foreign Keys. Dimension Tables are de-normalized tables. 
 
@@ -518,7 +518,8 @@ The **Fact Table** is the central element of the Dimensional Model. Each **Dimen
 4. Identify the Fact - Facts are mostly numerical values like price or cost per unit.
 5. Build a Schema - This Schema defines the database structure. There are three cummon used types of schemas:
 
-IMAGE OF THREE TYPE OF SCHEMAS 
+
+![Snowflake and Galaxy Schema](images/snowflake_schema.JPG "Snowflake and Galaxy Schema") 
 
 The benefits of a Dimensional Model are the facts, that they are easier to understand, optimized for high performance and optimized for retrieval (SELECT queries).
 
